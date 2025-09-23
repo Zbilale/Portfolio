@@ -1,0 +1,130 @@
+:root{
+    --bg-dark: #0d1117;
+    --card-bg: rgba(255,255,255,0.03);
+    --accent-1: rgba(70,200,255,0.12);
+    --accent-2: rgba(150,100,255,0.08);
+    --text: #e6eef8;
+    --muted: rgba(230,238,248,0.85);
+    --gap: 1.25rem;
+}
+
+/* page layout */
+html,body{height:100%; margin:0; font-family: "Nunito Sans", system-ui, sans-serif; background:
+    radial-gradient(circle at 10% 10%, rgba(0,191,255,0.06), transparent 15%),
+    radial-gradient(circle at 90% 90%, rgba(138,43,226,0.05), transparent 20%),
+    var(--bg-dark);
+    color:var(--text);
+}
+
+.wrap{max-width:1200px; margin:40px auto; padding:0 20px;}
+
+h1{margin:0 0 12px 0; font-size:1.6rem; letter-spacing:0.6px}
+.lead{color:var(--muted); margin-bottom:1.6rem; font-size:0.95rem}
+
+/* projects section */
+.projects-section{padding:1rem 0 3rem}
+.section-title{font-size:1.4rem; margin-bottom:0.5rem}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap);
+}
+
+.project-card {
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+    /* slight parent movement on hover */
+    will-change: transform;
+}
+.project-card:focus-within { outline: 2px solid rgba(70,200,255,0.12); outline-offset: 4px; }
+
+/* inner content (this is what animates in) */
+.project-inner{
+    background: var(--card-bg);
+    padding: 0.9rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    display:flex;
+    flex-direction:column;
+    gap:0.8rem;
+
+    /* start hidden / down */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: transform .6s cubic-bezier(.2,.9,.2,1), opacity .6s ease;
+    will-change: transform, opacity;
+}
+
+/* "shown" state toggled by JS */
+.project-inner.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* thumbnail (big) */
+.project-thumb{
+    height: 220px;
+    border-radius: 10px;
+    display:block;
+    overflow:hidden;
+    border: 1px solid rgba(255,255,255,0.04);
+    background: linear-gradient(120deg, rgba(70,200,255,0.06), rgba(150,100,255,0.06));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--muted);
+    font-weight:700;
+    font-size:1.35rem;
+}
+
+.project-title{ margin:0; font-size:1.05rem }
+.project-desc{ margin:0; color:var(--muted); font-size:0.95rem }
+.tags{ margin-top:6px }
+.tag{
+    display:inline-block; margin-right:6px; padding:6px 9px; border-radius:999px;
+    font-size:0.78rem; background: rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.03);
+    color:var(--muted);
+}
+
+/* button like link */
+.view-btn{
+    margin-top:auto;
+    display:inline-block;
+    padding:.45rem .8rem;
+    border-radius:8px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    color: #e6f7ff;
+    text-decoration:none;
+    font-weight:700;
+    border: 1px solid rgba(120,180,255,0.18);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.view-btn:hover{ transform: translateY(-4px); box-shadow: 0 10px 30px rgba(70,200,255,0.06); }
+
+/* parent hover effect separate from the inner animation to avoid transform conflict */
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.55); }
+.project-link{ color:inherit; text-decoration:none; display:block; }
+
+/* small-screen tweaks */
+@media (max-width:420px){
+    .project-thumb{ height:150px }
+    .projects-grid{ gap: 0.9rem }
+}
+
+/* Accessibility - reduce motion */
+@media (prefers-reduced-motion: reduce){
+    .project-inner { transition: none; transform:none; opacity:1; }
+}
+
+/* Replay button styling */
+.controls { margin-top:1.2rem; display:flex; gap:10px; align-items:center }
+.btn-ghost {
+    background:transparent; color:var(--muted); border:1px dashed rgba(255,255,255,0.06);
+    padding:.45rem .8rem; border-radius:8px; cursor:pointer;
+}

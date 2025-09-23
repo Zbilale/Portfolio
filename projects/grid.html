@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="grid.css">
+  <link rel="stylesheet" href="../nav.css">
+  <link rel="stylesheet" href="../style.css">
+  <title>My Projects</title>
+  
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="top-nav">
+    <h2>Zbilale</h2>
+    <ul>
+      <li class="hideOnMobile"><a href="projects.html">Change Layout</a></li>
+      <li class="hideOnMobile"><a href="../index.html">Home</a></li>
+      <li class="hideOnMobile"><a href="projects/projects.html">Projects</a></li>
+      <li class="hideOnMobile"><a href="contact/contact.html">Contact</a></li>
+      <li>
+        <button class="menu-btn" onclick="toggleSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></button>
+      </li>
+    </ul>
+  </div>
+  <div class="wrap">
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <a class="project-link" href="https://example.com/project1" target="_blank" rel="noopener noreferrer">
+            <div class="project-inner" tabindex="0">
+              <div class="project-thumb">Project 1</div>
+              <h3 class="project-title">Portfolio Website</h3>
+              <p class="project-desc">Sleek single-page portfolio built with HTML/CSS.</p>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+              <span class="view-btn" aria-hidden="true">View Project ↗</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <a class="project-link" href="https://example.com/project2" target="_blank" rel="noopener noreferrer">
+            <div class="project-inner" tabindex="0">
+              <div class="project-thumb">Project 2</div>
+              <h3 class="project-title">Task Manager App</h3>
+              <p class="project-desc">A small JS app with local storage & animations.</p>
+              <div class="tags"><span class="tag">JS</span><span class="tag">LocalStorage</span></div>
+              <span class="view-btn" aria-hidden="true">View Project ↗</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <a class="project-link" href="https://example.com/project3" target="_blank" rel="noopener noreferrer">
+            <div class="project-inner" tabindex="0">
+              <div class="project-thumb">Project 3</div>
+              <h3 class="project-title">React Dashboard</h3>
+              <p class="project-desc">Small dashboard showing charts and API calls.</p>
+              <div class="tags"><span class="tag">React</span><span class="tag">API</span></div>
+              <span class="view-btn" aria-hidden="true">View Project ↗</span>
+            </div>
+          </a>
+        </article>
+    </section>
+  </div>
+
+  <!--sidebar-->
+  <ul class="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+    <li class="hideOnMobile"><a href="projects.html">Change Layout</a></li>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="../contact/contact.html">Contact</a></li>
+    
+  </ul>
+<script src="../script.js"></script>
+<script src="grid.js"></script>
+</body>
+</html>
