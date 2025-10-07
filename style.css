@@ -6,12 +6,15 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364) fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   font-family: 'Nunito Sans', sans-serif;
   color: whitesmoke;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 /*button*/
 .btn {
@@ -146,3 +149,6 @@ body {
   opacity: 0; 
 }
 
+footer{
+  background-color: yellow;
+}

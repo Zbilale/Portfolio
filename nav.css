@@ -98,16 +98,7 @@ h3{
     font-size: 25px;
 }
 
-@media(max-width: 800px){
-  .hideOnMobile {
-    display: none;
-  }
-}
-@media(max-width: 400px){
-  .sidebar {
-    width: 100%;
-  }
-}
+
 
 .menu-btn {
   background: none;
@@ -143,4 +134,14 @@ h3{
 
 .close-btn:hover svg{
   transform: rotate(90deg) scale(1.5);
+}
+@media(max-width: 800px){
+  .hideOnMobile {
+    display: none;
+  }
+}
+@media(max-width: 400px){
+  .sidebar {
+    width: 100%;
+  }
 }

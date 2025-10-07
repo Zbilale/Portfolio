@@ -9,7 +9,9 @@
 }
 
 /* page layout */
-html,body{height:100%; margin:0; font-family: "Nunito Sans", system-ui, sans-serif; background:
+html,body{
+    height:100%; margin:0; font-family: "Nunito Sans", system-ui, sans-serif; 
+    background:
     radial-gradient(circle at 10% 10%, rgba(0,191,255,0.06), transparent 15%),
     radial-gradient(circle at 90% 90%, rgba(138,43,226,0.05), transparent 20%),
     var(--bg-dark);
@@ -108,7 +110,7 @@ h1{margin:0 0 12px 0; font-size:1.6rem; letter-spacing:0.6px}
 .view-btn:hover{ transform: translateY(-4px); box-shadow: 0 10px 30px rgba(70,200,255,0.06); }
 
 /* parent hover effect separate from the inner animation to avoid transform conflict */
-.project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.55); }
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(70,200,255,0.25); }
 .project-link{ color:inherit; text-decoration:none; display:block; }
 
 /* small-screen tweaks */
